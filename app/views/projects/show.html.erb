@@ -1,0 +1,281 @@
+<div class="menu-perfil-cima projetos-view">
+
+<ul>
+
+	<li id="primeiro-paragrafo" class="ponto ponto-ativo"> Início  > </li> <li class="ponto"> Problema  > </li> <li class="ponto"> Solução  > </li> <li class="ponto"> Linha do tempo  > </li> <li class="ponto"> Público Alvo  > </li>
+	<li class="ponto"> Resumo  > </li> <li class="ponto"> Recursos  > </li> <li class="ponto"> Cotas  > </li> <li class="ponto"> Responsável </li> 
+
+</ul>
+
+</div>
+
+<div class="menu-perfil-lado">
+	<ul>
+		<a href="/perfil"><li>Projetos</li></a>
+		<a href="/perfil"><li>Patrocínios</li></a>
+		<a href="/perfil"><li>Novidades</li></a>
+		<a href="/perfil"><li>Perfil</li></a>
+	</ul>
+</div>
+
+<div class="index-projetos index-open">
+
+ 		<div class="escorregar slide-ativo" id="primeiro-slide">
+
+ 		  <div class="apresentacao">
+
+ 		  	<div id="apresentacao">
+
+ 			<%= image_tag @project.imagem_project.url(:large) %>
+
+ 			</div>
+
+ 			<div class="linha"></div>
+
+ 			<div class="apresentacao-escrito">
+
+ 				<h2><%= @project.name %></h2> </br>
+
+ 				<p>Area de Atuação: <%= @project.areadeatuacao %></p>
+
+ 				<p><%= @project.site unless @project.site.length == 0 %> </p>
+
+ 				<div id="midias-sociais">
+
+ 					<% unless @project.facebook.length == 0 %>
+
+ 					<a href="<%= @project.facebook %>"><img src="http://i64.tinypic.com/ojjnll.png"></a>
+
+ 					<% end %>
+
+ 					<% unless @project.twitter.length == 0 %>
+ 					
+ 					<a href="<%= @project.twitter %>"><img src="http://i63.tinypic.com/2qbtx7p.png"></a>
+
+ 					<% end %>
+
+ 					<% unless @project.youtube.length == 0 %>
+
+ 					<a href="<%= @project.youtube.length == 0 %>"><img src="http://i64.tinypic.com/30krr0g.png"></a>
+ 						
+ 					<% end %>
+
+ 					<% unless @project.youtube.length == 0 %>
+ 						<a href="<%= @project.youtube.length %>" ><img src="http://i67.tinypic.com/15x0i8g.png"></a>
+ 					<% end %>
+
+ 				</div>
+
+ 			</div>
+
+ 		  </div>
+
+ 		</div>
+
+ 		<div class="escorregar problema textos">
+
+ 			<h1>Problema</h1>
+ 			
+ 			<div class="linha"></div>
+
+ 			<h3><%= @project.descricao_projeto1 %></h3>
+
+ 		</div>
+
+ 		<div class="escorregar textos solucao">
+
+ 			<h1>Solução</h1>
+
+ 			<div class="linha"></div>
+
+ 			<h3><%= @project.descricao_projeto2 %></h3>
+
+ 		</div>
+
+ 		<div class="escorregar linha-do-tempo textos">
+
+ 			<div class="linha"></div>
+
+ 			<ul>
+ 			<% @project.conquistas.split(';').each do |s| %>
+ 			<li><%= s %></li>
+ 			<% end %>
+ 			</ul>
+
+ 			<h2><%= Time.now.year %></h2>
+
+ 		</div>
+
+
+ 		<div class="escorregar publico-alvo textos">
+
+ 			<h1>Publico</br>Alvo</h1>
+
+ 			<div class="linha"></div>
+
+ 			<h3>É previsto que atinjamos
+
+ 				<%= @project.pessoasatigindas %>
+ 					<% if @project.genero == "Feminino" && @project.genero.present? %>
+ 						Mulheres
+ 					<% elsif @project.genero == "Masculino" && @project.genero.present? %>
+ 						Homens 
+ 					<% else %>
+ 						Pessoas
+ 					<% end %>	
+
+ 				 de <%= @project.idadeinicial %> até <%= @project.idadefinal %> anos
+
+ 				 de class média <%= @project.renda %>
+
+ 				 com escolaridade média de <%= @project.escolaridade %></h3>
+
+ 		</div>
+
+ 		<div class="escorregar textos resumo">
+
+ 			<h1>Em resumo</h1> 
+
+ 			<div class="linha"></div>
+
+ 			<h3><%= @project.descricao_projeto3 %></h3>
+
+ 		</div>
+
+ 		<div class="escorregar textos recursos">
+ 			
+ 			<h1>Recursos:</h1> 
+ 			<div class="linha"></div>
+ 			<h3> 
+ 				<ul>
+ 					<% @project.recursos.split(';').each do |s| %>
+ 				<li> <%= s %> </li>
+ 				    <% end %>
+ 				</ul>
+
+ 			</h3>
+
+ 		</div>
+
+ 		<div class="escorregar cotas">
+ 			<h3>
+ 				Cotas de patrocínio:
+ 			</h3>
+
+
+ 			<% unless @project.data_de_pagamento.length == 0 %>
+
+ 				<h4> Pagamento:
+ 					<%= "#{@project.data_de_pagamento.downcase}" %>
+ 				</h4>
+
+ 			<% end %>
+
+ 		</div>
+
+
+ 		<div class="escorregar representante textos">
+
+ 			<%= image_tag @project.user.imagem_user.url(:medium), class: 'imagem-representante' %>
+
+ 			<div class="linha"></div>
+
+ 			<h3>
+
+ 			<% if @project.user.nome == 0 %>
+
+ 				<%= @project.user.nomefantasia %></br>
+ 				Representante Legal: <%= @project.user.representante_legal %></br>
+
+ 			<% else %>
+
+ 				<%= @project.user.nome %> <%= @project.user.sobrenome %></br>
+
+ 				<%= @project.user.descricaopessoal%></br>
+
+ 			<% end %>
+
+ 			Descrição da Organização
+ 				<%= @project.user.descricaoempresa %></br>
+
+ 			Endereço:
+ 				<%= @project.endereco %>, <%= @project.cidade %>, <%= @project.estado %></br>
+
+ 			<% unless @project.user.linkedin.length == 0 %>
+
+ 				Linkedin: <%= @project.user.linkedin %></br>
+
+ 			<% end %>
+
+ 			Email:
+ 				<%= @project.user.email %></br>
+
+ 			Telefone:
+ 				<ul>
+ 					<li><%= @project.user.telefone %></li>
+ 					<li><%= @project.user.telefone2 unless @project.user.telefone2 == 0 %></li>
+ 				</ul>
+ 			</h3>
+
+ 		</div>
+
+
+ 		<% if !@project.leidepatrocionio.length == 0 %>
+
+ 		<div class="escorregar">
+
+ 			<h3>Estamos inscritos na lei de incentivo: </h3>
+ 				<h4><%= @project.leidepatrocionio %></h4>
+ 			<h3>O que siginifica 100% do imposto abatido em seu imposto de renda! Caso queira esse benefício, por favor contate o time da ClipSocial para mais informações</h3>
+
+
+ 		</div>
+
+ 		<% end %>
+
+ 		<div class="escorregar" id='obrigado'>
+ 			<h1>Obrigado!</h1>
+ 		</div>
+
+ 		<div style="position: absolute; margin-top: 43em;">
+
+
+ 			<a class="btn btn-default slide-anterior" href="#" role="button" style="display: inline-block">Slide Anterior</a>
+
+ 			<%= link_to "Apagar Projeto", user_project_path(current_user, @project), method: :delete, class: "btn btn-default broco" %>
+
+ 			<a class="btn btn-default proximo-slide" style="display: inline-block">Próximo Slide</a>
+ 			
+ 		</div>
+ 		
+ <% @sponsors.each do |s| %>
+
+ 	<h5 id="tag-mensagens" class="tag-mensagem-fechada">Mensagens</h5>
+
+ 	<div class="caixa-de-mensagens">
+
+
+ 		<div class="mensagens">
+ 			<% s.messages.order(:created_at).each do |m| %>
+ 			<ul id="chat1">
+ 				 <%= m.email_mensagem %> : <%= m.message %></br>
+ 			</ul>
+ 			<% end %>
+
+ 			<ul id="chat">
+ 				
+ 			</ul>
+ 		</div>
+
+ 		<div class="nova-mensagem">
+ 			<%= simple_form_for([current_user, s, s.messages.new], sponsor_id: s.id, remote: true, html: { class: 'form-inlines' }, defaults: { wrapper_html: { class: 'wrapper-mensagem'} }) do |f| %>
+ 			<%= f.input :message, label: "Nova Mensagem" %>
+ 			<%= f.button :submit, "Enviar" %>
+ 			<% end %>
+ 		</div>
+ 		
+ 	</div>
+
+ 	<% end %>
+ 			
+</div>

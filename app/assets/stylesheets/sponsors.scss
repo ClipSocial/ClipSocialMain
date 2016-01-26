@@ -1,0 +1,69 @@
+// Place all the styles related to the sponsors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.escorregar {
+	display: none;
+	position: absolute;
+	height: 20em;
+}
+
+.slide-ativo {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.broco {
+	display: inline-block;
+}
+
+#tag-mensagens {
+	position: relative;
+	width: 20em;
+	margin-left: 53em;
+	border: 6px solid #0f5d96;
+	border-top-left-radius: 1.4em;
+	border-top-right-radius: 1.4em;
+	height: 2em;
+	text-align: center;
+	color: white;
+	background-color: #0f5d96;
+	cursor: pointer;
+}
+
+.caixa-de-mensagens {
+	width: 20em;
+	height: 25em;
+	margin-top: -0.7em;
+	border: 1px solid #0f5d96;
+	margin-left: 53em;
+	z-index: 0;
+	position: absolute;
+	background-color: white;
+	display: none;
+}
+
+.wrapper-mensagem {
+	width: 90%;
+}
+
+.mensagens {
+	height: 12em;
+	overflow: auto;
+	display: none;
+}
+
+.nova-mensagem {
+	margin-top: 2em;
+	margin-left: 2em;
+	display: none;
+}
+
+.tag-mensagem-fechada {
+	margin-top: 46.1em;
+}
+
+.tag-mensagem-aberta {
+	margin-top: 21.15em;
+}

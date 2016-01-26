@@ -1,0 +1,67 @@
+
+<div class="singup">
+
+  <h2> Cadastro </h2>
+
+  <%= simple_form_for(@user, html: { multipart: true , class: 'form-horizontal'}, defaults: { wrapper_html: {class: 'wrapper-cpf'}, label_html: { class: 'label_form'}}) do |f| %>
+
+  <div class="infos form">
+    <%= f.input :email, wrapper_html: { class: 'wrapper-info'} %>
+    <%= f.input :password, label: 'Senha',wrapper_html: { class: 'wrapper-info'} %>
+    <%= f.input :password_confirmation, label: 'Confirmação de Senha',wrapper_html: { class: 'wrapper-info'} %>
+    <%= f.input :estado, collection: ["São Paulo"], wrapper_html: { class: 'wrapper-info'} %>
+    <%= f.input :cidade , collection: ["São Paulo", "Campinas", "Jundiai", "Valinhos", "Vinhedo"], wrapper_html: { class: 'wrapper-info'} %>
+    <%= f.input :endereco, label: "Endereço", wrapper_html: { class: 'wrapper-info'} %>
+    <%= f.input :telefone, label: 'Telefone Principal', wrapper_html: { class: 'wrapper-info'} %>
+    <%= f.input :telefone2, wrapper_html: { class: 'wrapper-info'}, label: 'Telefone Outro' %>
+    <%= f.input :descricaoempresa, label: "Descrição da Empresa/ONG", hint: "Faça uma breve descrição de sua empresa/ONG, seus serviços/produtos e consquistas",wrapper_html: { class: 'wrapper-info'} %>
+    <%= f.input :linkedin, wrapper_html: { class: 'wrapper-info'} %>
+  </div>
+
+  <div class="cpf-tag pag">
+    <h4>Pessoa Física</h4>
+  </div>
+  <div class="cnpj-tag pag pag-closed">
+    <h4>Pessoa Jurídica</h4>
+  </div>
+
+  <div class="cpf-form form-open form">
+
+    <div class="form-group">
+
+        <%= f.input :nome, hint: 'Nome Completo' %>
+        <%= f.input :cpf, hint: 'Só numeros' %>
+        <%= f.input :rg, hint: 'Só numeros' %>
+        <%= f.input :datanascimento, label: 'Data de Nascimento', order: [:day, :month, :year], start_year: Date.today.year - 90 %>
+    </div>
+    
+  </div>
+
+  <div class="cnpj-form form-closed form">
+
+      <div class="form-group">
+        <%= f.input :razaosocial, label: 'Razão Social', wrapper_html: { class: 'wrapper-cnpj'} %>
+        <%= f.input :nomefantasia, label: 'Nome Fantasia' %>
+        <%= f.input :cnpj, hint: 'Só números' %>
+        <%= f.input :cadastromunicipal, label: 'Cadastro Municipal' %>
+        <%= f.input :inscricaoestadual, label: 'Inscrição Estadual' %>
+        <%= f.input :representante_legal, label: 'Representante Legal' %>
+        <%= f.input :datacriacao, label: 'Data de Fundação', order: [:day, :month, :year], start_year: Date.today.year - 600 %>
+      </div>
+
+  </div>
+
+  <div id='botao'>
+    <%= f.input :imagem_user, label: "Coloque uma imagem de perfil! Pode ser um logo ou uma imagem própria" %>
+    <%= f.button :submit, "Cadastrar" %>
+    <% end %>
+  </div>
+
+</div>
+
+  <div class="effect1">
+  </div>
+
+</div>
+
+

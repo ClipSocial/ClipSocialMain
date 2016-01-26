@@ -1,0 +1,136 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.projetos-view {
+	color: white;
+}
+
+#primeiro-paragrafo {
+	margin-left: 20em;
+}
+
+.projetos-view li {
+	display: inline-block;
+	margin-top: 11em;
+	margin-left: 1em;
+	cursor: pointer;
+}
+
+.escorregar {
+	display: none;
+	position: absolute;
+	height: 20em;
+	background-color: #0f5d96;
+}
+
+.slide-ativo {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.imagem-representante {
+	width: 5em;
+	height: 5em;
+}
+
+.broco {
+	display: inline-block
+}
+
+.apresentacao {
+	margin-left: 20em;
+	margin-top: 10em;
+}
+
+#apresentacao img {
+	position: absolute;
+	width: 10em;
+	height: 10em;
+}
+
+.linha {
+	margin-top: 1em;
+	margin-left: 14em;
+	display: inline-block;
+	border: 2px solid white;
+	height: 15em;
+	border-radius: 0.2em;
+	position: relative;
+}
+
+.apresentacao-escrito {
+	posisition: absolute;
+	margin-left: 3em;
+	display: inline-block;
+	color: white;
+	font-family: Avenir, sans-serif;
+}
+
+.textos {
+	color: white;
+	font-family: Avenir, sans-serif;
+}
+
+.textos h1 {
+	display: inline-block;
+	position: absolute;
+	margin-left: 7.5em;
+	margin-top: 6em;
+}
+
+.textos .linha {
+	margin-left: 33em;
+	margin-top: 9em;
+}
+
+.textos h3 {
+	position: absolute;
+	display: inline-block;
+	margin-left: 1em;
+	margin-top: 6em;
+}
+
+.representante {
+	
+}
+
+.representante img {
+	position: absolute;
+	margin-left: 20em;
+	margin-top: 10em;
+	width: 10em;
+	height: 10em;
+}
+ 
+#midias-sociais img {
+	display: inline-block;
+	margin-bottom: 2.5em;
+	margin-left: -1em;
+	width: 2.5em;
+	height: 2.5em;
+}
+
+.linha-do-tempo ul {
+	position: absolute;
+	margin-left: 33em;
+	margin-top: -10em;
+}
+
+.linha-do-tempo li {
+	margin-top: 1em;
+	font-size: 1.5em;
+}
+
+.linha-do-tempo h2 {
+	position: absolute;
+	margin-left: 14.5em;	
+}
+
+#obrigado h1 {
+	color: white;
+	margin-left: 8em;
+	margin-top: 6em;
+	font-size: 5em;
+}

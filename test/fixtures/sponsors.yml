@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  area: MyString
+  estado: MyString
+  cidade: MyString
+  idadeinicial: 1
+  idadefinal: 1
+  renda: MyString
+  genero: MyString
+  escolaridade: MyString
+
+two:
+  area: MyString
+  estado: MyString
+  cidade: MyString
+  idadeinicial: 1
+  idadefinal: 1
+  renda: MyString
+  genero: MyString
+  escolaridade: MyString

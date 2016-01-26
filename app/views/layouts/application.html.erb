@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clipsocial</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+<!-- JQuery -->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+	<div class="cabecalho1 cabecalho">
+		
+		<div class="cima">
+			
+				<img src="http://i68.tinypic.com/i1a3j4.jpg">
+
+			<div class='login_logout'>
+			  <% if logged_in? %>
+			  		<a href="/perfil"><p>Bem Vindo <%= current_user.email %>!</p> <%= image_tag current_user.imagem_user.url(:thumb) %></a>
+			  		<%= link_to "Sair", logout_path, method: :delete %>
+			  <% else %>
+				<a href="/login"><p>Entrar |</p></a>
+				<a href="/cadastro"><p>Cadastrar</p></a>
+			  <% end %>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="cabecalho2 cabecalho">
+
+		<div class="aba" id="inicio">
+			<a href="/"><h3>Inicio</h3></a>
+		</div>
+
+		<div class="aba" id="projetos">
+			<h3>Projetos</h3>
+			<div class="menu">
+				<a href="#"><p>Melhores Projetos</p></a>
+				<a href="#"><p>Inscreva seu Projeto!</p></a>
+			</div>
+		</div>
+
+		<div class="aba" id="patrocinadores">
+			<h3>Patrocinadores</h3>
+			<div class="menu">
+				<a href="#"><p>Maiores Patrocinadores</p></a>
+				<a href="#"><p>Patrocine um Projeto!</p></a>
+			</div>
+		</div>
+
+		<div class="aba" id="sobre_nos">
+			<h3>Sobre Nós</h3>
+		</div>
+		
+	</div>
+
+	<% flash.each do |key, value| %>
+		<p id='<%= key %>'><%= value %></p>
+	<% end %>
+
+<%= yield %>
+
+	<div class="footer">
+
+		<img src="http://i68.tinypic.com/i1a3j4.jpg">
+
+		<div class="info">
+			<h2>Informações</h2>
+			<ul>
+				<li>Link1</li>
+				<li>Link2</li>
+				<li>Link3</li>
+			</ul>
+			<ul>
+				<li>Link4</li>
+				<li>Link5</li>
+				<li>Link6</li>
+			</ul>
+		</div>
+
+		<div class="parcerias">
+			<h2>Parcerias</h2>
+			<ul>
+				<li>Link1</li>
+				<li>Link2</li>
+				<li>Link3</li>
+			</ul>
+			<ul>
+				<li>Link4</li>
+				<li>Link5</li>
+				<li>Link6</li>
+			</ul>
+		</div>
+
+		<div class="hotlinks">
+			<h2>Hotlinks</h2>
+			<ul>
+				<li>Link1</li>
+				<li>Link2</li>
+				<li>Link3</li>
+			</ul>
+			<ul>
+				<li>Link4</li>
+				<li>Link5</li>
+				<li>Link6</li>
+			</ul>
+		</div>
+
+	</div>
+
+</body>
+</html>

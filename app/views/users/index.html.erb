@@ -1,0 +1,226 @@
+<div class="menu-perfil-cima">
+
+	<button type="button" class="btn btn-primary button-show" data-toggle="modal" data-target="#modalproject", style="margin-top: 11em; margin-left: 20em;" id="button-project">Criar Projeto</button>
+
+  <button type="button" class="btn btn-primary button-hidden" data-toggle="modal" data-target="#modalsponsor", style="margin-top: 11em; margin-left: -7.8em;" id="button-sponsor">Criar Patrocínio</button>
+
+  <button type="button" class="btn btn-primary button-hidden" data-toggle="modal" data-target="#modalperfil", style="margin-top: 11em; margin-left: -7.8em;" id="button-perfil">Alterar Informações</button>
+
+</div>
+
+<div class="modal fade bs-example-modal-lg" id="modalproject" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+    <div class="form-modal-project">
+      <%= simple_form_for([current_user, current_user.projects.new], html: { class: 'form-horizontal'}, defaults: { wrapper_html: { class: 'wrapper-index-projects'}}) do |f| %>
+      	<%= f.input :name, label: 'Nome do Projeto' %>
+        <h5><strong>O projeto tem duração determinada?</strong></h5>
+      	<%= f.collection_radio_buttons :determinado, [[true, 'Sim'], [false, 'Não']], :first, :last %>
+        <%= f.input :duracao, label: 'Caso sim, até quando?' %>
+      	<%= f.input :leidepatrocionio, label: 'O projeto está inscrito em alguma lei de incentivo?', collection: ['Lei Rouanet', 'Lei de incentivo de esporte', 'PROAC', 'PIE', 'PRONON', 'PRONAS-PCD', 'Lei do bem', 'FUNCAD'], include_blanck: "Nenhuma" %>
+      	<%= f.input :areadeatuacao, label: 'Qual melhor descreve a area de atuação do Projeto?', collection: ['Arquitetura e Urbanismo', 'Cultura', 'Educação', 'Mobilidade', 'Patrimônio', 'Esporte', 'Lazer', 'Tecnologia', 'Artes', 'Gestão Pública', 'Saúde', 'Filantropia', 'Eventos', 'Financiamento/Crédito', 'Ambiente/Sustentabilidade'] %>
+      	<%= f.input :estado, collection: ['São Paulo'] %>
+      	<%= f.input :cidade, collection: ['São Paulo', 'Campinas', 'Vinhedo', 'Valinhos', 'Jundiai'] %>
+      	<%= f.input :endereco %>
+        <h5><strong>Descreva brevemento o porquê seu projeto existe. Qual é o problema que ele tenta resolver?</strong>
+          <%= f.input :descricao_projeto1, label: false %>
+        </h5>
+        <h5><strong>Descreva sucintamente como seu projeto resolve o problema proposto</strong></h5>
+          <%= f.input :descricao_projeto2, label: false %>
+        <h5><strong>Em resumo, o que é seu projeto?</strong>
+          <%= f.input :descricao_projeto3, label: false %>
+        </h5>
+        <h5><strong>Descreva suas conquistas e respectivas datas aqui (ordem crescente), separando as conquistas por ponto e vigula da seguinte forma: </strong>
+        <%= f.input :conquistas, placeholder: 'Conquista 1 - 01/01/2001; Conquista 2 - 02/02/2002' %>
+        </h5>
+        <h5><strong>Descreva todos os recursos necessários para o projeto e o atual custo por unidade, a sua duração, seprando-os por virgula da seguinte forma: </strong></h5>
+          <%= f.input :recursos, placeholder: 'Recurso 1 - Reais/Unidade - mensal; Recurso 2 - Reais/Unidade - diario' %>
+        <%= f.input :data_de_pagamento, label: "Projetos com datas determinadas receberão o valor do patrocínio até uma semana antes do evento. Caso o projeto não tem data de termino, coloque se o patrocínio deve ser mensal, trimensal, semestral ou anual", collection: ['Mensal', 'Trimestral', 'Semestral', 'Anual'] %>
+      	<h5><strong>A idade de seu público é:</strong></h5>
+      		<div class="form-inline">
+      			<%= f.input :idadeinicial, label: 'de', wrapper_html: { class: 'wrapper-faixa'} %>
+      			<%= f.input :idadefinal, label: 'até', wrapper_html: { class: 'wrapper-faixa'} %>
+      		</div>
+      	<%= f.input :pessoasatigindas, label: 'Quantas pessoas, em média, seu projeto atinge/atingirá?' %>
+      	<%= f.input :renda, label: 'Qual é a renda mensal media do seu publico?', collection: ['A : R$20.000,00', 'B1 : R$8.700,00', 'B2 : R$4.500,00', 'C1 : R$2.400,00', 'C2 : R$1.500,00', 'D : R$700,00', 'E : > R$700,00'] %>
+      	<%= f.input :genero, label: 'Qual é o genero do seu público?', collection: ['Feminino', 'Masculino', 'Outros', 'Todos'] %>
+      	<%= f.input :escolaridade, label: 'Qual é o nível médio de escolaridade do seu público?', collection: ['Nenhum', 'educação infantil', 'ensino fundamental', 'ensino medio', 'ensino superior'] %>
+      	<%= f.input :site, label: 'Se tiverem um site, coloque o ulr aqui: ', placeholder: 'http://' %>
+      	<%= f.input :facebook, label: 'O Projeto tem uma página de facebook?', placeholder: 'http://' %>
+      	<%= f.input :curtidas, label: 'Caso sim, quantas curtidas?' %>
+      	<%= f.input :twitter, label: 'O Projeto tem página no twitter?', placeholder: 'http://' %>
+      	<%= f.input :seguidores, label: 'Caso sim, quantos seguidores?' %>
+      	<%= f.input :instagaram, label: 'O Projeto tem página no Instagram?', placeholder: 'http://' %>
+      	<%= f.input :seguidos, label: 'Caso sim, quantos seguidores?' %>
+      	<%= f.input :youtube, label: 'O Projeto tem canal no YouTube?', placeholder: 'http://' %>
+      	<%= f.input :inscritos, label: 'Caso sim, quantos inscritos?' %>
+        <%= f.input :imagem_project, label: 'Coloque uma imagem do seu projeto!' %>
+
+      	<%= f.button :submit, 'Criar seu projeto' %>
+
+      <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bs-example-modal-lg" id="modalsponsor" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+    <div class="form-modal-project">
+      <%= simple_form_for([current_user, current_user.sponsors.new], html: { class: 'form-horizontal formulario-sponsor'}, defaults: { wrapper_html: { class: 'wrapper-index-projects'}}) do |f| %>
+        <%= f.input :keyword, label: 'Está procurando um patrocínio específico? Caso sim, coloque uma palavra-chave para encontra-lo!' %>
+        <%= f.input :area, label: 'Qual area de atuação de projetos para patrocinar?', collection: ['Arquitetura e Urbanismo', 'Cultura', 'Educação', 'Mobilidade', 'Patrimônio', 'Esporte', 'Lazer', 'Tecnologia', 'Artes', 'Gestão Pública', 'Saúde', 'Filantropia', 'Eventos', 'Financiamento/Crédito', 'Ambiente/Sustentabilidade'] %>
+        <%= f.input :estado, collection: ['São Paulo'] %>
+        <%= f.input :cidade, collection: ['São Paulo', 'Campinas', 'Vinhedo', 'Valinhos', 'Jundiai'] %>
+        <h5><strong>A idade de seu público é:</strong></h5>
+          <div class="form-inline">
+            <%= f.input :idadeinicial, label: 'de', wrapper_html: { class: 'wrapper-faixa'} %>
+            <%= f.input :idadefinal, label: 'até', wrapper_html: { class: 'wrapper-faixa'} %>
+          </div>
+        <%= f.input :pessoasatingidas, label: 'Quantas pessoas, em média, para atingir?' %>
+        <%= f.input :renda, label: 'Qual é a renda média do seu publico?', collection: ['A : R$20.000,00', 'B1 : R$8.700,00', 'B2 : R$4.500,00', 'C1 : R$2.400,00', 'C2 : R$1.500,00', 'D : R$700,00', 'E : > R$700,00'] %>
+        <%= f.input :genero, label: 'Qual é o gênero do seu público?', collection: ['Feminino', 'Masculino', 'Outro', 'Todos'] %>
+        <%= f.input :escolaridade, label: 'Qual é o nível médio de escolaridade do seu público?', collection: ['Nenhum', 'educação infantil', 'ensino fundamental', 'ensino medio', 'ensino superior'] %>
+
+        <%= f.button :submit, 'Procurar Projetos para Patrocinar' %>
+
+      <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bs-example-modal-lg" id="modalperfil" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+    <div class="form-modal-project">
+      <%= simple_form_for(current_user, url: user_path(current_user), method: :put, html: { class: 'form-horizontal formulario-sponsor'}, defaults: { wrapper_html: { class: 'wrapper-index-projects'}}) do |f| %>
+
+          <% if current_user.nome %>
+
+            <%= f.input :nome %>
+            <%= f.input :sobrenome, label: "Sobrenome" %>
+            <%= f.input :descricaopessoal, label: "Descição Pessoal" %>
+
+          <% else %>
+
+            <%= f.input :razaosocial, label: "Razão Social" %>
+            <%= f.input :nomefantasia, label: "Nome Fantasia" %>
+            <%= f.input :cadastromunicipal, label: "Cadastro Municipal" %>
+
+          <% end %>
+
+            <%= f.input :email %>
+            <%= f.input :endereco, label: "Endereço" %>
+            <%= f.input :cidade %>
+            <%= f.input :estado %>
+            <%= f.input :telefone, label: "Telefone de Contato" %>
+            <%= f.input :telefone2, label: "Outro Telefone" %>
+            <%= f.input :descricaoempresa, label: "Descrição da Organização" %>
+            <%= f.input :linkedin %>
+            <%= f.input :imagem_user, label: "Trocar imagem de perfil" %>
+
+        <%= f.button :submit, 'Mudar Informações' %>
+
+      <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="menu-perfil-lado">
+	<ul>
+		<li id="pr">Projetos</li>
+		<li id="pt">Patrocínios</li>
+		<li id="nv">Novidades</li>
+		<li id="pf">Perfil</li>
+	</ul>
+</div>
+
+<div class="index-projetos index-open">
+
+  <% current_user.projects.each do |p| %>
+    <% if p.id %>
+      <a href="/users/<%= p.user.id %>/projects/<%=p.id%>"><%= image_tag p.imagem_project.url(:medium) %></a>
+    <% end %>
+  <% end %>
+
+</div>
+
+<div class="index-sponsor index-close">
+	
+    <% current_user.sponsors.each do |s| %>
+        <p>
+        <% if s.clipado? && s.id && s.project %>
+          <div>
+            <%= image_tag s.project.imagem_project.url(:medium) %>
+          <div style="position: relative; margin-left: 1.5em; margin-top: 1em;">
+            <%= link_to "Projeto: #{s.project.name}" , user_sponsor_path(current_user, s.id), class: "btn btn-default" %>
+          </div>
+        </div>
+        <% elsif !s.clipado? && s.id && s.project %>
+        <div>
+          <%= link_to "Patrocínio aberto em #{s.area}", user_sponsor_path(current_user, s.id), class: "btn btn-default"%>
+        </div>
+        <% end %>
+        </p>
+      <% end %>
+
+</div>
+
+<div class="index-novidades index-close">
+	
+</div>
+
+<div class="index-perfil index-close">
+
+    <%= image_tag current_user.imagem_user.url(:medium) %>
+
+    <% if !current_user.nome.length == 0 %>
+
+      <h3>Nome: <%= current_user.nome %> <%= current_user.sobrenome %></h3>
+
+      <h3>Descrição Pessoal <%= current_user.descricaopessoal %></h3>
+
+    <% else %>
+
+      <h3>Razão Social: <%= current_user.razaosocial %></h3>
+      <h3>Nome Fantasia: <%= current_user.nomefantasia %></h3>
+      <h3>Cadastro Municipal: 
+
+        <% if current_user.cadastromunicipal %>
+          Sim
+        <% else %>
+          Não
+        <% end %>
+
+      </h3>
+
+      <h3><%= current_user.representante_legal %></h3>
+
+    <% end %>
+
+    <h3>Endereço de Contato: <%= current_user.endereco %>, <%= current_user.cidade %>, <%= current_user.estado %></h3>
+
+    <h3>Email de Contato: <%= current_user.email %></h3>
+
+    <h3>Telefones de Contato: <%= current_user.telefone %>, <%= current_user.telefone2 %></h3>
+
+    <h3>Descrição da Organização <%= current_user.descricaoempresa %></h3>
+
+    <h3>Linkedin: <%= current_user.linkedin %></h3>
+
+    <%= link_to "Excluir Usuário", user_path(current_user), method: :delete, class: "btn btn-default" %>
+    
+</div>

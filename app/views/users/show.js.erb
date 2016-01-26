@@ -1,0 +1,2 @@
+$('#chat').append("<%= j @sponsor.messages.each { |m| m.message } %>");
+$('#new_message')[0].reset();

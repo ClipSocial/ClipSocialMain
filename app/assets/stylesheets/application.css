@@ -1,0 +1,188 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ a:link {
+ 	text-decoration: none !important;
+ }
+
+ a:visited {
+	text-decoration: none !important;
+}
+
+ a:hover {
+ 	text-decoration: none !important;
+ }
+
+ a:active{
+	text-decoration: none !important;
+ }
+
+ .cabecalho {
+ 	position: fixed;
+ 	z-index: 2;
+ }
+
+ .cabecalho1 {
+ 	margin-top: -0.5em;
+ 	margin-left: -0.625em;
+ 	background-color: #0f5d96;
+ 	width: 101%;
+ 	padding: 0.625em;
+ }
+
+ .cabecalho1 img {
+ 	margin-top: 0.313em;
+ 	margin-left: 1.250em;
+ 	width: 5.8em;
+ 	height: 5em;
+ 	display: inline-block;
+ }
+
+.login_logout {
+	margin-right: 3em;
+	margin-top: 0.25em;
+	float: right;
+	display: inline-block;
+
+}
+
+.login_logout p {
+	display: inline-block;
+	font-size: 0.9em;
+	font-family: "Roboto", sans-serif;
+	cursor: pointer;
+	color: white;
+}
+
+.login_logout img {
+	border-top-left-radius: 1.4em;
+	border-top-right-radius: 1.4em;
+	border-bottom-right-radius: 1.4em;
+}
+
+.login_logout a:link {
+	color: white;
+	text-decoration: none;
+}
+
+.login_logout a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+.login_logout a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.login_logout a:active {
+	color: white;
+	text-decoration: none;
+}
+
+.cabecalho2 {
+	background-color: #373149;
+	padding: 0.625em;
+	margin-top: 5.8em;
+	margin-left: -0.6em;
+	margin-bottom: 10em;
+	width: 101%;
+}
+
+.aba {
+	margin-left: 3.7em;
+	background-color: #994086;
+	border-radius: 1.4em;
+	display: inline-block;
+	width: 18em;
+	height: 2.1em;
+	cursor: pointer;
+}
+
+.aba h3 {
+	color: white;
+	margin-top: 0.6em;
+	font-size: 1em;
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+}
+
+.aba:hover {
+	margin-left: 3.7em;
+	background-color: white;
+	border-radius: 1.4em;
+	display: inline-block;
+	width: 18em;
+	height: 2.1em;
+	cursor: pointer;
+}
+
+.aba:hover h3 {
+	color: #373149;
+	margin-top: 0.6em;
+	font-size: 1em;
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+}
+
+.menu {
+	position: absolute;
+	background-color: #373149;
+	width: 17.857em;
+	border-bottom-right-radius: 1.4em;
+	display: none;
+}
+
+.menu p {
+	margin-top: 0.714em;
+	margin-left: 0.714em;
+	font-size: 1em;
+	color: white;
+	font-family: "Roboto", sans-serif;
+}
+
+.footer {
+	position: absolute;
+	color: white;
+	font-family: "Roboto", sans-serif;
+	background-color: #0f5d96;
+	margin-top: 5em;
+	margin-left: -0.714em;
+	width: 101%;
+	padding: 0.714em;
+}
+
+.footer h2 {
+	text-align: center;
+	color: #0caf9f;
+}
+
+.footer img {
+	position: absolute;
+	margin-left: 0.714em; 
+	width: 8.929em;
+	height:  8.229em;
+	display: inline-block;
+}
+
+.footer div {
+	margin-left: 200px;
+	display: inline-block;
+}
+
+.footer ul {
+	display: inline-block;
+}

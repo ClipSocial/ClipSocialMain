@@ -1,0 +1,21 @@
+<div class="effect"></div>
+
+<div class="login">
+
+  <h4>Entrar</h4>
+  
+  <div class="login-form">
+    
+    <%= simple_form_for(:user, url: sessions_path, html: {class: 'form-horizontal'}, defaults: { label_html: { class: 'login-label'}}) do |f| %>
+
+    <div class="form-group">
+      <%= f.input :email %>
+      <%= f.input :password, label: 'Senha' %>
+      <%= f.button :submit, 'Entrar' %>
+    </div>
+
+    <% end %>
+
+  </div>
+
+</div>

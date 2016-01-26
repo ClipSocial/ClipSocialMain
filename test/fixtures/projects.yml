@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  determinado: false
+  duracao: 2015-12-13
+  leidepatrocionio: MyString
+  areadeatuacao: MyString
+  cidade: MyString
+  estado: MyString
+  endereco: MyString
+  idadeinicial: 1
+  idadefinal: 1
+  pessoasatigindas: MyString
+  renda: MyString
+  genero: MyString
+  escolaridade: MyString
+  site: MyString
+  facebook: MyString
+  curtidas: 1
+  twitter: MyString
+  seguidores: 1
+  youtube: MyString
+  inscritos: 1
+  instagaram: MyString
+  seguidos: 1
+
+two:
+  name: MyString
+  determinado: false
+  duracao: 2015-12-13
+  leidepatrocionio: MyString
+  areadeatuacao: MyString
+  cidade: MyString
+  estado: MyString
+  endereco: MyString
+  idadeinicial: 1
+  idadefinal: 1
+  pessoasatigindas: MyString
+  renda: MyString
+  genero: MyString
+  escolaridade: MyString
+  site: MyString
+  facebook: MyString
+  curtidas: 1
+  twitter: MyString
+  seguidores: 1
+  youtube: MyString
+  inscritos: 1
+  instagaram: MyString
+  seguidos: 1

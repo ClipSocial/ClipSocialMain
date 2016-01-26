@@ -1,0 +1,331 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#carousel-example-generic {
+	margin-left: 4.6em;
+	position: absolute;
+	width: 90%;
+	margin-top: 10.714em;
+	z-index: 0;
+}
+
+.ong {
+	display: inline-block;
+	height: 33em;
+	border: 1px solid black;
+	margin-top: 50em;
+	margin-left: 3em;
+	width: 43.6%;
+	border-top-left-radius: 1.4em;
+	border-bottom-left-radius: 1.4em;
+	cursor: pointer;
+}
+
+.ongv {
+	display: inline-block;
+	height: 33em;
+	border: 1px solid black;
+	margin-top: 50em;
+	margin-left: 3em;
+	width: 77.2%;
+	border-top-left-radius: 1.4em;
+	border-bottom-left-radius: 1.4em;
+	cursor: pointer;
+}
+
+.ongm {
+	display: inline-block;
+	height: 33em;
+	border: 1px solid black;
+	margin-top: 50em;
+	margin-left: 3em;
+	width: 10%;
+	border-top-left-radius: 1.4em;
+	border-bottom-left-radius: 1.4em;
+	cursor: pointer;
+}
+
+.emp {
+	display: inline-block;
+	height: 33em;
+	border: 1px solid black;
+	margin-top: 50em;
+	margin-right: 4.3em;
+	float: right;
+	width: 43.6%;
+	border-top-right-radius: 1.4em;
+	border-bottom-right-radius: 1.4em;
+	cursor: pointer;
+}
+
+.empv {
+	display: inline-block;
+	height: 33em;
+	border: 1px solid black;
+	margin-top: 50em;
+	margin-right: 4.5em;
+	float: right;
+	width: 77.2%;
+	border-top-right-radius: 1.4em;
+	border-bottom-right-radius: 1.4em;
+	cursor: pointer;
+}
+
+.empm {
+	display: inline-block;
+	height: 33em;
+	border: 1px solid black;
+	margin-top: 50em;
+	margin-right: 4.5em;
+	float: right;
+	width: 10%;
+	border-top-right-radius: 1.4em;
+	border-bottom-right-radius: 1.4em;
+	cursor: pointer;
+}
+
+.singup {
+	margin-right: 25%;
+	margin-left: 25%;
+	position: absolute;
+	margin-top: 13em;
+	z-index: 0;
+	padding: 5em;
+	border-top-left-radius: 1.4em;
+	border-top-right-radius: 1.4em;
+	border-bottom-right-radius: 1.4em;
+	background-color: #0caf9f;
+	height: 132em;
+}
+
+.singup h2 {
+	text-align: center;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+}
+
+.info {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 5em;
+	padding-right: 5em;
+}
+
+.pag {
+	margin-top: 1em;
+	padding: 1em;
+}
+
+.pag h4 {
+	margin-left: 2em;
+	font-family: "Roboto", sans-serif;
+	color: white;
+}
+
+.pag-open {
+	height: 5em;
+	z-index: 1;
+}
+
+.pag-closed {
+	height: 6em;
+	z-index: -1;
+}
+
+.cpf-tag {
+	border-top-left-radius: 1.4em;
+	border-top-right-radius: 1.4em;
+	margin-left: 1.8em;
+	width: 45%;
+	display: inline-block;
+	background-color: #0f5d96;
+}
+
+.cnpj-tag {
+	background-color: #994086;
+	border-top-left-radius: 1.4em;
+	border-top-right-radius: 1.4em;
+	float: right;
+	margin-right: 1.75em;
+	display: inline-block;
+	width: 44.9%;
+}
+
+.form {
+	margin-right: auto;
+	margin-left: auto;
+	width: 90%;
+	border-bottom-right-radius: 1.4em;
+	color: white;
+}
+
+.form p {
+	color: white;
+}
+
+.form-open {
+	z-index: 1;
+}
+
+.form-closed {
+	visibility: hidden;
+	z-indez: -1;
+}
+
+.cpf-form {
+	padding: 5em;
+	margin-top: 0.5;
+	border-top-right-radius: 1.4em;
+	background-color: #0f5d96;
+}
+
+.cnpj-form {
+	padding: 5em;
+	margin-top: -45em;
+	border-top-left-radius: 1.4em;
+	background-color: #994086;
+}
+
+.wrapper-info {
+	padding-right: 4em;
+	padding-left: 4em;
+}
+
+.wrapper-cpf {
+	color: white;
+}
+
+.wrapper-cnpj {
+	margin-top: 3em;
+}
+
+.label_form {
+	color: white;
+}
+
+#botao{
+	position: relative;
+	margin-top: 0.1em;
+	margin-left: 30%;
+	margin-right: 30%;
+	padding-left: 10%;
+}
+
+.effect1 {
+	display: inline-block;
+	margin-left: 50%;
+	margin-top: 50em;
+	margin-bottom: 90em;
+	cursor: pointer;
+}
+
+.menu-perfil-cima {
+	border: 1px solid #b4b4b3;
+	height: 15em;
+	background-color: #b4b4b3;
+}
+
+.menu-perfil-lado {
+	margin-top: -5.9em;
+	border: 1px solid #b4b4b3;
+	height: 50em;
+	width: 15em;
+	background-color: #b4b4b3;
+	display: inline-block;
+}
+
+.menu-perfil-lado ul {
+	margin-top: 3em;
+	margin-left: 2.5em;
+}
+
+.menu-perfil-lado li {
+	margin-bottom: 11em;
+	color: white;
+	font-size: 1.1em;
+	cursor: pointer;
+}
+
+.index-projetos {
+	position: absolute;
+	margin-top: 1em;
+	margin-left: 1em;
+	display: inline-block;
+	height: 42em;
+	width: 74em;
+}
+
+.index-projetos img {
+	border-top-left-radius: 1.4em;
+	border-top-right-radius: 1.4em;
+	border-bottom-right-radius: 1.4em;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 1em;
+	height: 9em;
+	width: 9em;
+}
+
+.index-open {
+	
+}
+
+.index-close {
+	visibility: hidden;
+}
+
+.index-sponsor {
+	position: absolute;
+	display: inline-block;
+	margin-top: 1em;
+	margin-left: 1em;
+	width: 74em;
+	height: 42em;
+}
+
+.index-sponsor img {
+	border-top-left-radius: 1.4em;
+	border-top-right-radius: 1.4em;
+	border-bottom-right-radius: 1.4em;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 1em;
+	height: 9em;
+	width: 9em;
+}
+
+.index-novidades {
+	position: absolute;
+	display: inline-block;
+	margin-top: 1em;
+	margin-left: 1em;
+	width: 74em;
+	height: 42em;
+}
+
+.index-perfil {
+	position: absolute;
+	display: inline-block;
+	margin-top: 1em;
+	margin-left: 1em;
+	width: 74em;
+	height: 42em;
+}
+
+.form-modal-project {
+	margin-left: 20%;
+	margin-right: 20%;
+	padding-top: 5em;
+	padding-bottom: 5em;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.wrapper-faixa {
+	padding: 1em;
+}
+
+.button-hidden {
+	visibility: hidden;
+}
