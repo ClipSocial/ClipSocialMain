@@ -2,8 +2,12 @@
 
 <ul>
 
-	<li id="primeiro-paragrafo" class="ponto ponto-ativo"> Início  > </li> <li class="ponto"> Problema  > </li> <li class="ponto"> Solução  > </li> <li class="ponto"> Linha do tempo  > </li> <li class="ponto"> Público Alvo  > </li>
-	<li class="ponto"> Resumo  > </li> <li class="ponto"> Recursos  > </li> <li class="ponto"> Cotas  > </li> <li class="ponto"> Responsável </li> 
+<div id='protecao'>
+
+	<li id="primeiro-paragrafo" class="ponto"> Início  > </li> <li class="ponto"> Problema  > </li> <li class="ponto"> Solução  > </li> <li class="ponto"> Linha do tempo  > </li> <li class="ponto publico-alvo-botao"> Público Alvo  > </li>
+	<li class="ponto"> Resumo  > </li> <li class="ponto"> Recursos  > </li> <li class="ponto"> Cotas  > </li> <li class="ponto"> Responsável </li>
+
+</div>
 
 </ul>
 
@@ -106,7 +110,6 @@
 
  		</div>
 
-
  		<div class="escorregar publico-alvo textos">
 
  			<h1>Publico</br>Alvo</h1>
@@ -124,9 +127,15 @@
  						Pessoas
  					<% end %>	
 
+ 				</br>
+
  				 de <%= @project.idadeinicial %> até <%= @project.idadefinal %> anos
 
+ 				 </br>
+
  				 de class média <%= @project.renda %>
+
+ 				 </br>
 
  				 com escolaridade média de <%= @project.escolaridade %></h3>
 
@@ -176,7 +185,11 @@
 
  		<div class="escorregar representante textos">
 
+ 			<div id='representante'>
+
  			<%= image_tag @project.user.imagem_user.url(:medium), class: 'imagem-representante' %>
+
+
 
  			<div class="linha"></div>
 
@@ -216,6 +229,8 @@
  					<li><%= @project.user.telefone2 unless @project.user.telefone2 == 0 %></li>
  				</ul>
  			</h3>
+
+ 			</div>
 
  		</div>
 

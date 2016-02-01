@@ -284,6 +284,19 @@ var main = function(){
   	  }
   });
 
+  $('.ponto').click(function(){
+  	if ($('.ponto').hasClass('publico-alvo-botao')) {
+
+  	var escorregada = $('.publico-alvo')
+  	var escorregadaAtual = $('.slide-ativo');
+
+  	escorregadaAtual.fadeOut(600).removeClass('slide-ativo');
+  	escorregada.fadeIn(600).addClass('slide-ativo');
+
+  };
+
+  });
+
 }
 
 $(document).ready(main)
