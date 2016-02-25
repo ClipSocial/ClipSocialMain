@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'users#pagina_inicial'
 
+  resources :contactcs, only: [:new, :create]
+
+  get '/sobre_nos' => 'contactcs#new', as: 'sobre_nos'
+
   resources :users do
     resources :sponsors, only: [:create, :destroy, :show, :update] do
       put 'clipar'

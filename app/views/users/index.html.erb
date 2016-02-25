@@ -19,11 +19,11 @@
       	<%= f.collection_radio_buttons :determinado, [[true, 'Sim'], [false, 'Não']], :first, :last %>
         <%= f.input :duracao, label: 'Caso sim, até quando?' %>
       	<%= f.input :leidepatrocionio, label: 'O projeto está inscrito em alguma lei de incentivo?', collection: ['Lei Rouanet', 'Lei de incentivo de esporte', 'PROAC', 'PIE', 'PRONON', 'PRONAS-PCD', 'Lei do bem', 'FUNCAD'], include_blanck: "Nenhuma" %>
-      	<%= f.input :areadeatuacao, label: 'Qual melhor descreve a area de atuação do Projeto?', collection: ['Arquitetura e Urbanismo', 'Cultura', 'Educação', 'Mobilidade', 'Patrimônio', 'Esporte', 'Lazer', 'Tecnologia', 'Artes', 'Gestão Pública', 'Saúde', 'Filantropia', 'Eventos', 'Financiamento/Crédito', 'Ambiente/Sustentabilidade'] %>
+      	<%= f.input :areadeatuacao, label: 'Qual melhor descreve a área de atuação do Projeto?', collection: ['Arquitetura e Urbanismo', 'Cultura', 'Educação', 'Mobilidade', 'Patrimônio', 'Esporte', 'Lazer', 'Tecnologia', 'Artes', 'Gestão Pública', 'Saúde', 'Filantropia', 'Eventos', 'Financiamento/Crédito', 'Ambiente/Sustentabilidade'] %>
       	<%= f.input :estado, collection: ['São Paulo'] %>
       	<%= f.input :cidade, collection: ['São Paulo', 'Campinas', 'Vinhedo', 'Valinhos', 'Jundiai'] %>
       	<%= f.input :endereco %>
-        <h5><strong>Descreva brevemento o porquê seu projeto existe. Qual é o problema que ele tenta resolver?</strong>
+        <h5><strong>Descreva brevemento o porquê seu projeto existe. Qual é o problema que ele resolve?</strong>
           <%= f.input :descricao_projeto1, label: false %>
         </h5>
         <h5><strong>Descreva sucintamente como seu projeto resolve o problema proposto</strong></h5>

@@ -1,0 +1,64 @@
+// Place all the styles related to the contactcs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.missao-visao-valores {
+	position: absolute;
+	margin-top: 10em;
+	padding-top: 5em;
+	
+}
+
+.caixa {
+	display: inline-block;
+	width: 15em;
+}
+
+.caixa h4 {
+	text-align: center;
+	color: #0f5d96;
+}
+
+.caixa p {
+	text-align: center;
+}
+
+.linha-sobre_nos {
+	display: inline-block;
+	margin-left: 4em;
+	margin-right: 4em;
+	width: 0;
+	border: 1px solid #0caf9f;
+	height: 10em;
+}
+
+#missao {
+	margin-left: 14em;
+}
+
+.fale-conosco {
+	position: absolute;
+	margin-top: 35em;
+	margin-left: 10em;
+}
+
+.fale-conosco {
+	position: absolute;
+	width: 70em;
+}
+
+.fale-conosco h4 {
+	color: #0f5d96;
+}
+
+.labele {
+	color: #373149;
+}
+
+.effect2 {
+	display: inline-block;
+	margin-left: 50%;
+	margin-top: 35em;
+	margin-bottom: 35em;
+	cursor: pointer;
+}

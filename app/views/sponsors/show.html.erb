@@ -256,35 +256,22 @@
 
  		</div>
 
+ 		<% unless @p.leidepatrocionio == nil %>
+
+ 		<% if !@p.leidepatrocionio.length == 0 %>
+
  		<div class="escorregar">
 
- 			<h4>Venha nos visitar em: </h4>
+ 			<h3>Estamos inscritos na lei de incentivo: </h3>
+ 				<h4><%= @p.leidepatrocionio %></h4>
+ 			<h3>O que siginifica 100% do imposto abatido em seu imposto de renda! Caso queira esse benefício, por favor contate o time da ClipSocial para mais informações</h3>
 
- 			<h3>
-
- 				<% if !@p.site.length == 0 %>
- 					Site: <%= @project.site %>
- 				<% end %>
-
- 				<% if !@p.facebook.length == 0  %>
- 					Página de Facebook: <%= @p.facebook %> com <%= @p.curtidas %> curtidas
- 				<% end %>
-
- 				<% if !@p.twitter.length == 0 %>
- 					Perfil no Twitter: <%= @p.twitter %> com <%= @p.seguidores %> seguidores
- 				<% end %>
-
- 				<% if !@p.youtube.length == 0  %>
- 					Canal do YouTube: <%= @p.youtube %> com <%= @p.inscritos %> inscritos
- 				<% end %>
-
- 				<% if !@p.instagaram.length == 0  %>
- 					Perfil no Instagram: <%= @p.instagaram %> com <%= @p.seguidos %> seguidores
- 				<% end %>
-
- 			</h3>
 
  		</div>
+
+ 		<% end %>
+
+ 		<% end %>
 
  		<div class="escorregar">
  			<h1>Obrigado!</h1>
@@ -341,19 +328,6 @@
  		<div class="escorregar textos">
 
  			<h3>O projeto tem duração prevista para: <%= p.duracao %></h3>
-
- 		</div>
-
- 		<% end %>
-
- 		<% unless p.leidepatrocionio.length == 0 %>
-
- 		<div class="escorregar textos">
-
- 			<h3>Estamos inscritos na lei de incentivo: </h3>
- 				<h4><%= p.leidepatrocionio %></h4>
- 			<h3>O que siginifica 100% do imposto abatido em seu imposto de renda! Caso queira esse benefício, por favor contate o time da ClipSocial para mais informações</h3>
-
 
  		</div>
 
@@ -472,6 +446,10 @@
  		</div>
 
 
+ 		<% unless p.leidepatrocionio == nil %>
+
+ 		<% if p.leidepatrocionio.length == 0 %>
+
  		<div class="escorregar">
 
  			<h3>Estamos inscritos na lei de incentivo: </h3>
@@ -481,35 +459,9 @@
 
  		</div>
 
- 		<div class="escorregar">
+ 		<% end %>
 
- 			<h4>Venha nos visitar em: </h4>
-
- 			<h3>
-
- 				<% if !p.site.length == 0 %>
- 					Site: <%= p.site %>
- 				<% end %>
-
- 				<% if !p.facebook.length == 0  %>
- 					Página de Facebook: <%= p.facebook %> com <%= p.curtidas %> curtidas
- 				<% end %>
-
- 				<% if !p.twitter.length == 0 %>
- 					Perfil no Twitter: <%= p.twitter %> com <%= p.seguidores %> seguidores
- 				<% end %>
-
- 				<% if !p.youtube.length == 0  %>
- 					Canal do YouTube: <%= p.youtube %> com <%= p.inscritos %> inscritos
- 				<% end %>
-
- 				<% if !p.instagaram.length == 0  %>
- 					Perfil no Instagram: <%= p.instagaram %> com <%= p.seguidos %> seguidores
- 				<% end %>
-
- 			</h3>
-
- 		</div>
+ 		<% end %>
 
  		<div class="escorregar">
  			<h1>Obrigado!</h1>

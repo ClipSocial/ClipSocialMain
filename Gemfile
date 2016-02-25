@@ -30,6 +30,8 @@ gem 'kaminari'
 
 gem 'bootstrap-kaminari-views'
 
+gem 'mail_form'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
