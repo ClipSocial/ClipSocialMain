@@ -11,7 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114022224) do
+ActiveRecord::Schema.define(version: 20160303171958) do
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string   "namespace"
+    t.text     "body"
+    t.string   "resource_id",   null: false
+    t.string   "resource_type", null: false
+    t.integer  "author_id"
+    t.string   "author_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
+  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "messages", force: :cascade do |t|
     t.text     "message"
@@ -61,6 +94,10 @@ ActiveRecord::Schema.define(version: 20160114022224) do
     t.string   "imagem_project_content_type"
     t.integer  "imagem_project_file_size"
     t.datetime "imagem_project_updated_at"
+    t.string   "imagem_cotas_file_name"
+    t.string   "imagem_cotas_content_type"
+    t.integer  "imagem_cotas_file_size"
+    t.datetime "imagem_cotas_updated_at"
   end
 
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"
@@ -92,26 +129,26 @@ ActiveRecord::Schema.define(version: 20160114022224) do
     t.string   "sobrenome"
     t.string   "razaosocial"
     t.string   "nomefantasia"
-    t.integer  "cpf"
-    t.integer  "cnpj"
+    t.integer  "cpf",                      limit: 12
+    t.string   "cnpj"
     t.string   "estado"
     t.string   "cidade"
     t.string   "endereco"
     t.string   "email"
-    t.integer  "telefone"
-    t.integer  "telefone2"
-    t.boolean  "cadastromunicipal",        default: false
-    t.boolean  "inscricaoestadual",        default: false
+    t.integer  "telefone",                 limit: 11
+    t.integer  "telefone2",                limit: 11
+    t.boolean  "cadastromunicipal",                   default: false
+    t.boolean  "inscricaoestadual",                   default: false
     t.string   "representante_legal"
-    t.integer  "rg"
+    t.integer  "rg",                       limit: 10
     t.text     "descricaopessoal"
     t.text     "descricaoempresa"
     t.date     "datanascimento"
     t.date     "datacriacao"
     t.string   "password_digest"
     t.string   "linkedin"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
     t.string   "imagem_user_file_name"
     t.string   "imagem_user_content_type"
     t.integer  "imagem_user_file_size"

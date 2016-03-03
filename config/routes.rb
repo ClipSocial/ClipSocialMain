@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
-  root 'users#pagina_inicial'
-
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  
   resources :contactcs, only: [:new, :create]
 
   get '/sobre_nos' => 'contactcs#new', as: 'sobre_nos'
+
+  root to: "users#pagina_inicial"
 
   resources :users do
     resources :sponsors, only: [:create, :destroy, :show, :update] do

@@ -32,6 +32,10 @@ gem 'bootstrap-kaminari-views'
 
 gem 'mail_form'
 
+gem 'activeadmin', github: 'activeadmin'
+
+gem 'devise'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
